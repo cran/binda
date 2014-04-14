@@ -1,0 +1,16 @@
+c963d512009d8d03f0e046526f730284 *DESCRIPTION
+d98ea95bb4d8d4b1d10c728942623031 *NAMESPACE
+879a283a9ea0f994c9815b271702add5 *NEWS
+97da3da1539f90d379186aab27b49643 *R/binda.R
+169a3f2957d19a79767747057e5f8c7e *R/binda.ranking.R
+5bfeeef6f978c82616645f1e5325f134 *R/chances.R
+1426dd0c8148016afc42c30efc2e6ba7 *R/dichotomize.R
+d0dd18fda704149fe08d6ceabcbbf89f *R/getClassMeans.R
+8141ec2d0a2de042c6596fc91d9033f2 *R/is.binaryMatrix.R
+9a10b1a7fc2c4e46729ee98e109d40c7 *man/binda-internal.Rd
+b5e2bddcbf049a02979a37d82c2a4d7f *man/binda.Rd
+2d6ddc6db248809ec713f53556742a1c *man/binda.package.Rd
+9be86988e0bb3597b39de8a987f5b0d3 *man/binda.ranking.Rd
+38a572f60d04cb0a2003b60448a281cf *man/chances.Rd
+57c987a8580410b4bb5efaaed8f490a1 *man/dichotomize.Rd
+7e6b58d4f5e540024124bf085da8f01a *man/is.binaryMatrix.Rd

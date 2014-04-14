@@ -1,0 +1,13 @@
+export(
+"is.binaryMatrix",
+"dichotomize",
+"optimizeThreshold",
+"chances",
+"binda.ranking",
+"plot.binda.ranking",
+"binda",
+"predict.binda"
+)
+import(
+"entropy"
+)

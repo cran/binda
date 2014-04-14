@@ -1,0 +1,12 @@
+       
+
+           RELEASE HISTORY OF THE "binda" PACKAGE
+
+
+Version 1.0.0:
+
+- First public release (14 April 2014)
+
+  The "binda" package implements functions for multi-class discriminant
+  analysis using binary predictors, for corresponding variable selection, 
+  and for dichotomizing continuous data.
