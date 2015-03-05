@@ -2,9 +2,18 @@
 
            RELEASE HISTORY OF THE "binda" PACKAGE
 
+
+Version 1.0.2:
+
+- Faster computation of ranking score.
+- Faster is.binaryMatrix() function.
+- Fix "S3 generic/method consistency" NOTE raised by R-devel.
+- Updated documentation to include reference to Gibb and Strimmer (2015).
+
+
 Version 1.0.1:
 
-- change of maintainer email address.
+- Change of maintainer email address.
 
 
 Version 1.0.0:

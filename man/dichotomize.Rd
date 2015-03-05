@@ -28,7 +28,7 @@ optimizeThreshold(X, L, lambda.freqs, verbose=FALSE)
   \code{optimizeThreshold} uses (approximate) mutual information to 
   determine the optimal thresholds.  Specifically, the thresholds are chosen to maximize the
   mutual information between response and each variable.  The same criterion is also used in
-   \code{\link{binda.ranking}}.
+   \code{\link{binda.ranking}}.  For detailed description of the dichotomization procedure see Gibb and Strimmer (2015).
 
    Class frequencies are estimated using \code{\link[entropy]{freqs.shrink}}.
 }
@@ -38,6 +38,12 @@ optimizeThreshold(X, L, lambda.freqs, verbose=FALSE)
   \code{optimizeThreshold} returns a vector containing the variable thresholds.
 }
 
+
+
+\references{
+Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis.  Submitted.
+\url{http://arxiv.org/abs/1502.07959}
+}
 
 \author{
   Sebastian Gibb and Korbinian Strimmer (\url{http://strimmerlab.org}).

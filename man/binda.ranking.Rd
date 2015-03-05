@@ -35,7 +35,12 @@ binda.ranking(Xtrain, L, lambda.freqs, verbose=TRUE)
 }
 \details{
 The overall ranking of a feature is determined by computing a weighted sum of
-the squared t-scores. This is approximately equivalent to the mutual information between the response and each variable.  The same criterion is used in \code{\link{dichotomize}}.
+the squared t-scores. This is approximately equivalent to the mutual information between the response and each variable.  The same criterion is used in \code{\link{dichotomize}}.  For precise details see Gibb and Strimmer (2015).
+}
+
+\references{
+Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis.  Submitted.
+\url{http://arxiv.org/abs/1502.07959}
 }
 
 \value{

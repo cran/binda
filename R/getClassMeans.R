@@ -1,8 +1,8 @@
-### getClassMeans.R  (2014-04-07)
+### getClassMeans.R  (2015-02-28)
 ###
 ###    Get Class Means, Class Frequencies, and Class Samples
 ###
-### Copyright 2013-14  Sebastian Gibb and Korbinian Strimmer
+### Copyright 2013-15  Sebastian Gibb and Korbinian Strimmer
 ###
 ###
 ### This file is part of the `binda' library for R and related languages.
@@ -47,29 +47,18 @@ getClassFreqs = function(L, lambda.freqs, verbose)
 {
   if (!is.factor(L)) stop("Labels must be given as factor!")
 
-  classes = levels(L)
-  samples = getClassSamples(L)
-
   # estimate class frequencies
-  freqs = entropy::freqs.shrink( samples, lambda.freqs=lambda.freqs, verbose=verbose )
+  freqs = entropy::freqs.shrink( getClassSamples(L), lambda.freqs=lambda.freqs, verbose=verbose )
 
   return(freqs)
 }
+
 
 getClassSamples = function(L)
 {
   if (!is.factor(L)) stop("Labels must be given as factor!")
 
-  classes = levels(L)
-  samples = numeric(length(classes))
-  names(samples) = classes
-
-  for (k in seq(along=classes))
-  {
-     samples[k] = sum(L == classes[k])
-  }
-
-  return(samples)
+  return( setNames(tabulate(L), levels(L)) )
 }
 
 

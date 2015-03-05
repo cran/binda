@@ -45,6 +45,17 @@ binda(Xtrain, L, lambda.freqs, verbose=TRUE)
 }
 \seealso{\code{\link{binda.ranking}}.}
 
+\details{
+ For detailed description of binary discriminant analysis as implented in \code{binda} see Gibb and Strimmer (2015).
+}
+
+
+\references{
+Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis.  Submitted.
+\url{http://arxiv.org/abs/1502.07959}
+}
+
+
 \examples{
 # load "binda" library
 library("binda")

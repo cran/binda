@@ -12,6 +12,10 @@ and for dichotomizing continuous data.
 
 \author{Sebastian Gibb and Korbinian Strimmer (\url{http://strimmerlab.org/})}
 \references{
+
+Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis.  Submitted.
+\url{http://arxiv.org/abs/1502.07959}
+
   
   Website: \url{http://cran.r-project.org/web/packages/binda/}
 }

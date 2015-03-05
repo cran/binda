@@ -1,21 +1,21 @@
-### binda.ranking.R  (2014-04-14)
+### binda.ranking.R  (2015-02-28)
 ###
 ###    Multi-class discriminant analysis with binary predictors
 ###
-### Copyright 2013-2014  Sebastian Gibb and Korbinian Strimmer
+### Copyright 2013-2015  Sebastian Gibb and Korbinian Strimmer
 ###
 ###
 ### This file is part of the `binda' library for R and related languages.
 ### It is made available under the terms of the GNU General Public
 ### License, version 3, or at your option, any later version,
 ### incorporated herein by reference.
-### 
+###
 ### This program is distributed in the hope that it will be
 ### useful, but WITHOUT ANY WARRANTY; without even the implied
 ### warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 ### PURPOSE.  See the GNU General Public License for more
 ### details.
-### 
+###
 ### You should have received a copy of the GNU General Public
 ### License along with this program; if not, write to the Free
 ### Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
@@ -33,32 +33,29 @@ binda.ranking = function(Xtrain, L, lambda.freqs, verbose=TRUE)
   if (verbose) reportDetails(Xtrain, L)
 
   # class frequencies
-  #regularization = rep(NA, 1)
-  #names(regularization) = c("lambda.freqs")
   freqs = getClassFreqs(L, lambda.freqs=lambda.freqs, verbose=verbose)
-  #regularization[1] = attr(freqs, "lambda.freqs")
-  attr(freqs, "lambda.freqs")=NULL
+  attr(freqs, "lambda.freqs") = NULL
 
   # means (columns=classes)
   mu = getClassMeans(Xtrain, L)
 
   # (approximate) mutual information between each feature and the response
-  score = apply(mu, 1, rankingScore, freqs=freqs, tscores=TRUE, n=length(L))
+  score = rankingScore(mu, freqs, tscores=TRUE, n=length(L))
 
   idx = order(score[1,], decreasing = TRUE)
-  
+
   ranking = cbind(idx, t(score[,idx]))
   colnames(ranking) = c("idx", rownames(score))
   rownames(ranking) = colnames(Xtrain)[idx]
- 
+
   attr(ranking, "class") = "binda.ranking"
   attr(ranking, "cl.count") = dim(score)[1]-1
 
   return(ranking)
 }
 
-# modifed from sda package
-plot.binda.ranking = function(x, top=40, arrow.col="blue", zeroaxis.col="red", 
+# modified from sda package
+plot.binda.ranking = function(x, top=40, arrow.col="blue", zeroaxis.col="red",
   ylab="Variables", main, ...)
 {
   if (class(x) != "binda.ranking")
@@ -78,7 +75,7 @@ plot.binda.ranking = function(x, top=40, arrow.col="blue", zeroaxis.col="red",
 
   cn = substr(cn, 3, nchar(cn))
   xlab = "t-Scores (Class Mean vs. Pooled Mean)"
- 
+
 
   if (is.null(rn))
   {
@@ -196,37 +193,25 @@ plot.binda.ranking = function(x, top=40, arrow.col="blue", zeroaxis.col="red",
 
 
 ## private functions
-
-# mutual information between a binary feature and the response
-rankingScore = function(mu, freqs, tscores=FALSE,n=1) 
+rankingScore = function(mu, freqs, tscores=FALSE, n=1)
 {
-  #s = entropy::mi.plugin( rbind(freqs*mu, freqs*(1-mu)) ) # from entropy
-
-  #same as above but computed differently
-  #mu = avoidBoundaries(mu)
-  #mu.pooled = sum(mu*freqs)
-  #kl = mu*log(mu/mu.pooled) + (1-mu)*log((1-mu)/(1-mu.pooled)) 
-  #t2 = 2*kl*freqs/(1-freqs)
-  #cat("t2 =", t2, "\n")  
-  #s = sum(freqs*kl)
-
-  #same as above but approximated (LR chi squared statistic)
+  # relative entropy ( mutual information between a binary feature and the response)
+  # approximation (LR chi squared statistic)
   mu = avoidBoundaries(mu)
-  mu.pooled = sum(mu*freqs)
+  mu.pooled = as.vector(mu %*% freqs)
 
-  t2 = freqs/(1-freqs) * (mu-mu.pooled)^2/( mu.pooled*(1-mu.pooled) )
-
-  s = sum( 1/2*(1-freqs)*t2 )
-  names(s) = "score"
-
+  k1 = (mu-mu.pooled)^2/( mu.pooled*(1-mu.pooled) )
+  t2 = t(t(k1) * freqs/(1-freqs))
+  s = colSums( t(t2) * 1/2*(1-freqs) )
   s = 2*n*s # adjust scale with sample size (so that s is the sum of squared t)
+  names(s) = "score"
 
   if(tscores) # also return the group-specific t-scores
   {
     t = sqrt(t2)*sign(mu-mu.pooled)
     t = sqrt(n)*t # adjust scale with sample size to match conventional t-score
-    names(t) = paste("t", names(t), sep=".")
-    s = c(s, t)
+    s = t(cbind(s, t))
+    rownames(s) = c("score", paste("t", colnames(mu), sep="."))
   }
 
   return(s)

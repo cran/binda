@@ -8,6 +8,8 @@ export(
 "binda",
 "predict.binda"
 )
+S3method("plot", "binda.ranking")
+S3method("predict", "binda")
 import(
 "entropy"
 )

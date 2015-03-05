@@ -1,8 +1,8 @@
-### dichotomize.R  (2014-04-09)
+### dichotomize.R  (2015-02-28)
 ###
 ###    Dichotomize Continuous Labeled Data 
 ###
-### Copyright 2013-14  Sebastian Gibb and Korbinian Strimmer
+### Copyright 2013-15  Sebastian Gibb and Korbinian Strimmer
 ###
 ###
 ### This file is part of the `binda' library for R and related languages.
@@ -80,7 +80,7 @@ optimizeThreshold = function(X, L, lambda.freqs, verbose=FALSE)
     ## mu matrix
     mu = getClassMeans(bm, L)
  
-    scr[i, ] = apply(mu, 1, rankingScore, freqs=freqs)
+    scr[i, ] = rankingScore(mu, freqs)
   }
 
   ## find thesholds with maximal scores
