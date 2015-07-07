@@ -3,6 +3,12 @@
            RELEASE HISTORY OF THE "binda" PACKAGE
 
 
+Version 1.0.3:
+
+- added import statements required by new version of R.
+- updated references.
+
+
 Version 1.0.2:
 
 - Faster computation of ranking score.

@@ -10,6 +10,9 @@ export(
 )
 S3method("plot", "binda.ranking")
 S3method("predict", "binda")
-import(
-"entropy"
-)
+import("entropy")
+
+import("graphics")
+import("stats")
+import("utils")
+

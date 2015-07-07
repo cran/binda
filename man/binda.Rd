@@ -51,7 +51,7 @@ binda(Xtrain, L, lambda.freqs, verbose=TRUE)
 
 
 \references{
-Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis.  Submitted.
+Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis. Bioinformatics, to appear.
 \url{http://arxiv.org/abs/1502.07959}
 }
 
