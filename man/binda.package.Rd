@@ -10,14 +10,13 @@ analysis using binary predictors, for corresponding variable selection,
 and for dichotomizing continuous data.
 }
 
-\author{Sebastian Gibb and Korbinian Strimmer (\url{http://strimmerlab.org/})}
+\author{Sebastian Gibb and Korbinian Strimmer (\url{https://strimmerlab.github.io/})}
 \references{
 
-Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis. Bioinformatics, to appear.
-\url{http://arxiv.org/abs/1502.07959}
-
+Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis. Bioinformatics 31:3156-3162.
+<DOI:10.1093/bioinformatics/btv334>
   
-  Website: \url{http://strimmerlab.org/software/binda/}
+  Website: \url{https://strimmerlab.github.io/software/binda/}
 }
 \keyword{multivariate}
 \seealso{

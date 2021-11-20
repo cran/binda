@@ -35,7 +35,7 @@ chances(X, L, lambda.freqs, verbose=TRUE)
 
 
 \author{
-  Sebastian Gibb and Korbinian Strimmer (\url{http://strimmerlab.org}).
+  Sebastian Gibb and Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 \seealso{ \code{\link{is.binaryMatrix}}.}
 

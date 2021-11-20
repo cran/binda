@@ -41,12 +41,12 @@ optimizeThreshold(X, L, lambda.freqs, verbose=FALSE)
 
 
 \references{
-Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis.  Bioinformatics, to appear.
-\url{http://arxiv.org/abs/1502.07959}
+Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis. Bioinformatics 31:3156-3162.
+<DOI:10.1093/bioinformatics/btv334>
 }
 
 \author{
-  Sebastian Gibb and Korbinian Strimmer (\url{http://strimmerlab.org}).
+  Sebastian Gibb and Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 \seealso{ \code{\link{binda.ranking}}, \code{\link[entropy]{freqs.shrink}}, \code{\link[entropy]{mi.plugin}},  \code{\link{is.binaryMatrix}}.}
 

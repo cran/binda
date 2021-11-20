@@ -39,8 +39,8 @@ the squared t-scores. This is approximately equivalent to the mutual information
 }
 
 \references{
-Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis.  Submitted.
-\url{http://arxiv.org/abs/1502.07959}
+Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selection in mass spectrometry data by binary discriminant analysis. Bioinformatics 31:3156-3162.
+<DOI:10.1093/bioinformatics/btv334>
 }
 
 \value{
@@ -53,7 +53,7 @@ Gibb, S., and K. Strimmer. 2015.  Differential protein expression and peak selec
 }
 
 \author{
-  Sebastian Gibb and Korbinian Strimmer (\url{http://strimmerlab.org}).
+  Sebastian Gibb and Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 \seealso{\code{\link{binda}}, \code{\link{predict.binda}}, \code{\link{dichotomize}}.}
 
